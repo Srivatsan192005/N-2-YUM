@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N^2YUM Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with website title -->
+  <header>
+    <h1>N<sup>2</sup>YUM Admin</h1>
+  </header>
+
+  <!-- Home Page with Selection Boxes -->
+  <div id="homePage" class="page">
+    <div class="grid">
+      <div class="box" onclick="navigateToMenu('menuPage1', 'N1')">N1</div>
+      <div class="box" onclick="navigateToMenu('menuPage2', 'N2')">N2</div>
+      <div class="box" onclick="navigateToMenu('menuPage3', 'N3')">N3</div>
+      <div class="box" onclick="navigateToMenu('menuPage4', 'N4')">N4</div>
+    </div>
+  </div>
+
+  <!-- Menu Pages with Quantity Selection -->
+  <div id="menuPage1" class="page menuPage">
+    <h2>Menu for N1</h2>
+    <ul>
+      <li>Tea <input type="number" min="0" placeholder="Qty"></li>
+      <li>Coffee <input type="number" min="0" placeholder="Qty"></li>
+      <li>Sandwich <input type="number" min="0" placeholder="Qty"></li>
+      <li>Juice <input type="number" min="0" placeholder="Qty"></li>
+    </ul>
+    <button onclick="goToTokenPage('menuPage1', 'N1')">Confirm Selection</button>
+  </div>
+  
+  <div id="menuPage2" class="page menuPage">
+    <h2>Menu for N2</h2>
+    <ul>
+      <li>Burger <input type="number" min="0" placeholder="Qty"></li>
+      <li>Pasta <input type="number" min="0" placeholder="Qty"></li>
+      <li>Salad <input type="number" min="0" placeholder="Qty"></li>
+      <li>Smoothie <input type="number" min="0" placeholder="Qty"></li>
+    </ul>
+    <button onclick="goToTokenPage('menuPage2', 'N2')">Confirm Selection</button>
+  </div>
+
+  <div id="menuPage3" class="page menuPage">
+    <h2>Menu for N3</h2>
+    <ul>
+      <li>Pizza <input type="number" min="0" placeholder="Qty"></li>
+      <li>Fries <input type="number" min="0" placeholder="Qty"></li>
+      <li>Soda <input type="number" min="0" placeholder="Qty"></li>
+      <li>Ice Cream <input type="number" min="0" placeholder="Qty"></li>
+    </ul>
+    <button onclick="goToTokenPage('menuPage3', 'N3')">Confirm Selection</button>
+  </div>
+
+  <div id="menuPage4" class="page menuPage">
+    <h2>Menu for N4</h2>
+    <ul>
+      <li>Wraps <input type="number" min="0" placeholder="Qty"></li>
+      <li>Muffins <input type="number" min="0" placeholder="Qty"></li>
+      <li>Cookies <input type="number" min="0" placeholder="Qty"></li>
+      <li>Milkshake <input type="number" min="0" placeholder="Qty"></li>
+    </ul>
+    <button onclick="goToTokenPage('menuPage4', 'N4')">Confirm Selection</button>
+  </div>
+
+  <!-- Token Page -->
+  <div id="tokenPage" class="page">
+    <h2>Enter Your Token</h2>
+    <input type="text" id="tokenInput" placeholder="Enter token">
+    <button onclick="sendToken()">Send Token</button>
+  </div>
+
+  <!-- Order Table Page -->
+  <div id="orderTablePage" class="page">
+    <h2>Order Status</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Items</th>
+          <th>Origin</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="orderTableBody"></tbody>
+    </table>
+    <button onclick="refreshOrders()">Refresh Orders</button>
+    <button onclick="goHomeAndClearData()">Go to Home</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
